@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS Admin Login</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <!-- CSS Stylesheets -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Remix Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body id="modalLogin">
+    <div id="registerFormModal" class="modalLogin">
+        <div class="modal-content">
+            <span class="modal-close" id="closeRegisterStaff">&times;</span>
+            <h2 class="modal-header">Admin Login</h2>
+            <form action="#" method="post" id="adminLoginForm">
+                <div class="form-field">
+                    <label for="adminName" class="username">Username</label>
+                    <input type="text" class="input-text" id="adminName" name="adminName" placeholder="Enter your admin name" required>
+                </div>
+                <div class="form-field">
+                    <label for="password" class="password">Password</label>
+                    <input type="password" class="input-text" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <div class="form-field">
+                    <button type="submit" id="loginButton">Sign In</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/adminLogin.js"></script>
+    <script>
+        const closeReg = document.getElementById('closeRegisterStaff');
+        closeReg.addEventListener('click', () => {
+            window.location.href = '/';
+            alert('Login Closed!');
+        });
+    </script>
+</body>
+</html>

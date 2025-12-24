@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS Menu Page</title>
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body id="rms">
+    <nav class="navbarRms_container container" id="navbar">
+        <a href="#" onclick="homePage()" id="logo" class="logo">RMS</a>
+        <ul class="navbarRms_menu" id="navbarRms_menu">
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="homePage()" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Home</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="menuPage()" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Menu</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="orderPage()" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Orders</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="staffLogin()" class="navbarRms_menu_list_link staff" id="navbarRms_menu_list_link staff">Staff</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <div class="dropdown">
+                    <a href="#" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Account</a>
+                    <div class="dropdown-content">
+                        <a href="#" id="loginBtn">Login</a>
+                        <a href="#" id="registerBtn">Register</a>
+                    </div>
+                </div>
+            </li>
+         </ul>
+    </nav>
+    <main class="main_container" id="main_container">
+        <section class="menu_section menu" id="menu_section">
+            <div class="menu_container container" id="menu_container">
+                <h1 class="menu_title" id="menu_title">Menu</h1>
+                <select class="menu_select" id="menu_select">
+                    <option value="#">All</option>
+                    <!-- Categories will be dynamically inserted here -->
+                </select>
+                <div class="menu_container_cards cards" id="menu_container_cards">
+                    <!-- Menu cards will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Form -->
+    <div id="loginFormModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeLogin">&times;</span>
+            <h2 class="modal-header">Login</h2>
+            <form action="#" method="post" id="LoginForm">
+                <div class="form-field">
+                    <label for="customerNameLog" class="username">Customer Name</label>
+                    <input type="text" class="input-text" id="customerNameLog" name="customerNameLog" placeholder="Enter customer name" required>
+                </div>
+                <div class="form-field">
+                    <label for="passwordLog" class="password">Password</label>
+                    <input type="password" class="input-text" id="passwordLog" name="passwordLog" placeholder="Enter your password" required>
+                </div>
+                <div class="form-field">
+                     <button type="submit" id="loginButton">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerFormModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeRegister">&times;</span>
+            <h2 class="modal-header">Register</h2>
+            <form action="#" method="post" id="RegisterForm">
+                <div class="form-field">
+                    <label for="customerNameReg" class="username">Customer Name</label>
+                    <input type="text" class="input-text" id="customerNameReg" name="customerNameReg" placeholder="Create a customer name" required>
+                </div>
+                <div class="form-field">
+                    <label for="emailReg" class="email">Email</label>
+                    <input type="email" class="input-text" id="emailReg" name="emailReg" placeholder="Enter your email" required>
+                </div>
+                <div class="form-field">
+                    <label for="passwordReg" class="password">Password</label>
+                    <input type="password" class="input-text" id="passwordReg" name="passwordReg" placeholder="Create a password" required>
+                </div>
+                <div class="form-field">
+                    <label for="confirmPasswordReg" class="password">Confirm Password</label>
+                    <input type="password" class="input-text" id="confirmPasswordReg" name="confirmPasswordReg" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-field">
+                    <button type="submit" id="registerButton">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="footer_container" id="footer_container">
+            <div class="footer_containers" id="footer_containers">
+                <div class="footer_container_socials" id="footer_container_socials">
+                    <p class="footer_description" id="footer_description">RMS</p>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-twitter"></i>
+                    </a>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-envelope"></i>
+                    </a>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="footer_container_link" id="footer_container_link">
+                    <ul class="footer_links" id="footer_links">
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" onclick="homePage()" class="footer_link_link" id="footer_link_link">Home</a>
+                        </li>
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" oncanplay="menuPage()" class="footer_link_link" id="footer_link_link">Menu</a>
+                        </li>
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" onclick="orderPage()" class="footer_link_link" id="footer_link_link">Orders</a>
+                        </li>
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" class="footer_link_link" id="footer_link_link">Account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_container_copyright" id="footer_container_copyright">
+                    <p class="footer_copyright" id="footer_copyright">&copy; 2025 RMS. All rights reserved.</p>
+                    <p class="footer_developed" id="footer_developed"><a href="#" onclick="adminLogin()" class="admin" id="admin">Developed by ROSE MULEWA</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/script.js"></script>
+    <script src="/js/form.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const menuCardsContainer = document.getElementById('menu_container_cards');
+    const menuSelect = document.getElementById('menu_select');
+    let menuData = [];
+
+    // Fetch menu data from backend
+    async function fetchMenu() {
+        try {
+            const response = await fetch('/customerMenuTab');
+            const { data } = await response.json();
+            menuData = data;
+            renderCategories();
+            renderMenuCards();
+        } catch (err) {
+            menuCardsContainer.innerHTML = '<p>Failed to load menu items.</p>';
+            console.error(err);
+        }
+    }
+
+    // Render categories in the select dropdown
+    function renderCategories() {
+        const categories = Array.from(new Set(menuData.map(item => item.category))).filter(Boolean);
+        menuSelect.innerHTML = '<option value="#">All</option>';
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+            menuSelect.appendChild(option);
+        });
+    }
+
+    // Render menu cards based on selected category
+    function renderMenuCards() {
+        const selectedCategory = menuSelect.value;
+        let filteredMenu = menuData;
+        if (selectedCategory !== '#' && selectedCategory !== 'All') {
+            filteredMenu = menuData.filter(item => item.category === selectedCategory);
+        }
+        menuCardsContainer.innerHTML = filteredMenu.map(item => `
+            <div class="menu_container_card card">
+                <img src="/images/${item.img || 'default.jpg'}" alt="${item.itemName}" class="menu_container_card_img">
+                <h2 class="menu_container_card_title">${item.itemName}</h2>
+                <p class="menu_container_card_price">Ksh ${item.price}</p>
+                <a href="/order?item=${encodeURIComponent(item.itemName)}" class="menu_container_card_btn">Order Now</a>
+            </div>
+        `).join('');
+    }
+
+    // Listen for category change
+    menuSelect.addEventListener('change', renderMenuCards);
+
+    // Initial fetch
+    fetchMenu();
+});
+    </script>
+</body>
+</html>

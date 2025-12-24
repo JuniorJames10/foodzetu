@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Menu Dashboard</title>
+    <!-- Favion Icon -->
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/table.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!--==========GOOGLE FONTS===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="/images/RMS_LOGO.png" alt="">
+            </div>
+
+            <span class="logo_name">CUSTOMER</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="customerDashboard">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="customerMenusDash">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Menu</span>
+                </a></li>
+				<li><a href="customerOrdersDash">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Orders</span>
+                </a></li>
+                <li><a href="customerBillsDash">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Bill</span>
+			    </a></li>
+                <li><a href="customerFeedbackDash">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Feedback</span>
+			    </a></li>
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="logout">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <!-- <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div> -->
+            
+            <img src="/images/RMS.png" alt="">
+        </div>
+
+        <div class="dash-content">
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Order View</span>
+                </div>
+
+                <!-- <div class="arrow-back arrow" id="arrow-back">
+                    <div class="back" id="backCusKey">
+                        <i class="uil uil-arrow-left"></i>
+                        <span class="text">Back</span>
+                    </div>
+                </div> -->
+                <form action="" method="post" class="addStaffForm staffsForm" id="orderItemForm">
+                    <div class="formGroup forms" id="formGroup">
+                        <label for="customerName" class="staffName label_tag">Customer Name</label>
+                        <input type="text" id="customerName" name="customerName" class="formInput input_tag" placeholder="Validate Customer Name" required>
+                    </div>
+                    <div class="formGroup forms" id="formGroup">
+                        <label for="itemName" class="email label_tag">Item Name</label>
+                        <input type="text" id="itemName" name="itemName" class="formInput input_tag" placeholder="Validate Item Name" required>
+                    </div>
+                    <div class="formGroup forms" id="formGroup">
+                        <label for="quantity" class="passwword label_tag">Quantity</label>
+                        <input type="number" id="quantity" name="quantity" class="formPassword input_tag" placeholder="Enter quantity" required>
+                    </div>
+                    <div class="formBtns twoButtons" id="formBtns">
+                        <input type="submit" value="Place Order" class="formInputsBtn submit_btn" id="submit_btn">
+                        <input type="reset" value="Cancel" class="formInputsBtn reset_btn" id="reset_btn">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/mainDashboard.js"></script>
+    <script src="/js/customerOrderPage.js"></script>
+</body>
+</html>
+
+
+
+<!-- <tr>
+    <td>John Doe</td>
+    <td>doe@rms.com</td>
+    <td>
+        <a href="#" class="deleteUser sub" id="deleteUser">Delete</a>
+    </td>
+</tr>
+<tr>
+    <td>John Doe</td>
+    <td>doe@rms.com</td>
+    <td>
+        <a href="#" class="deleteUser sub" id="deleteUser">Delete</a>
+    </td>
+</tr>
+<tr>
+    <td>John Doe</td>
+    <td>doe@rms.com</td>
+    <td>
+        <a href="#" class="deleteUser sub" id="deleteUser">Delete</a>
+    </td>
+</tr> -->

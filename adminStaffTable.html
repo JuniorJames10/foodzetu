@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Staff Table</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/css/modern-dashboard.css">
+    <!-- ICONS (Boxicons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body id="body-pd">
+    <header class="header" id="header">
+        <div class="header__toggle">
+            <i class='bx bx-menu' id="header-toggle"></i>
+        </div>
+        <div class="header__img">
+            <img src="/images/RMS.png" alt="Admin">
+        </div>
+    </header>
+
+    <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div>
+                <a href="adminDashboard" class="nav__logo">
+                    <i class='bx bx-layer nav__logo-icon'></i>
+                    <span class="nav__logo-name">ADMIN</span>
+                </a>
+
+                <div class="nav__list">
+                    <a href="adminDashboard" class="nav__link">
+                        <i class='bx bx-grid-alt nav__icon'></i>
+                        <span class="nav__name">Dashboard</span>
+                    </a>
+                    <a href="adminUsersGen" class="nav__link active">
+                        <i class='bx bx-user nav__icon'></i>
+                        <span class="nav__name">Users</span>
+                    </a>
+                    <a href="adminMenusGen" class="nav__link">
+                        <i class='bx bx-food-menu nav__icon'></i>
+                        <span class="nav__name">Menu</span>
+                    </a>
+                    <a href="adminOrderDash" class="nav__link">
+                        <i class='bx bx-message-square-detail nav__icon'></i>
+                        <span class="nav__name">Orders</span>
+                    </a>
+                    <a href="adminFeedbackDash" class="nav__link">
+                        <i class='bx bx-comment-detail nav__icon'></i>
+                        <span class="nav__name">Feedbacks</span>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <a href="#" class="nav__link" id="theme-toggle">
+                    <i class='bx bx-moon nav__icon'></i>
+                    <span class="nav__name">Dark Mode</span>
+                </a>
+                <a href="logout" class="nav__link">
+                    <i class='bx bx-log-out nav__icon'></i>
+                    <span class="nav__name">Logout</span>
+                </a>
+            </div>
+        </nav>
+    </div>
+
+    <!--Container Main start-->
+    <main class="main-content">
+        <div class="activity">
+            <div class="title">
+                 <button onclick="window.location.href='/adminNavUserPage'" style="background: none; border: none; cursor: pointer; margin-right: 1rem;">
+                    <i class='bx bx-arrow-back' style="font-size: 1.5rem; color: var(--text-color);"></i>
+                </button>
+                <i class='bx bxs-user-badge'></i>
+                <span class="text">Staff</span>
+            </div>
+
+            <div class="table-container">
+                <table class="usersTable">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyUsers">
+                        <!-- JS will populate this -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <!--Container Main end-->
+
+    <script src="/js/adminStaffTable.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+                const toggle = document.getElementById(toggleId),
+                nav = document.getElementById(navId),
+                bodypd = document.getElementById(bodyId),
+                headerpd = document.getElementById(headerId)
+
+                if(toggle && nav && bodypd && headerpd){
+                    toggle.addEventListener('click', ()=>{
+                        nav.classList.toggle('show')
+                        bodypd.classList.toggle('body-pd')
+                        headerpd.classList.toggle('body-pd')
+                    })
+                }
+            }
+            showNavbar('header-toggle','nav-bar','body-pd','header')
+
+            const linkColor = document.querySelectorAll('.nav__link')
+            function colorLink(){
+                if(linkColor){
+                    linkColor.forEach(l=> l.classList.remove('active'))
+                    this.classList.add('active')
+                }
+            }
+            linkColor.forEach(l=> l.addEventListener('click', colorLink))
+
+             // Dark mode
+            const themeToggle = document.getElementById('theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-theme');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <!-- Favion Icon -->
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="/css/table.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!--==========GOOGLE FONTS===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="/images/RMS_LOGO.png" alt="">
+            </div>
+
+            <span class="logo_name">ADMIN</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+                <li><a href="adminDashboard">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Dashboard</span>
+                </a></li>
+                <li><a href="adminUsersGen">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Users</span>
+                </a></li>
+				<li><a href="adminMenusGen">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Menu</span>
+                </a></li>
+				  <li><a href="adminOrderDash">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Orders</span>
+                </a></li>
+                <li><a href="adminFeedbackDash">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Feedbacks</span>
+                </a></li>
+                <!-- <li><a href="#">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Transfer Complaints</span>
+			    </a></li> -->
+            </ul>
+            
+            <ul class="logout-mode">
+                <li><a href="logout">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Logout</span>
+                </a></li>
+
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div class="top">
+            <i class="uil uil-bars sidebar-toggle"></i>
+
+            <!-- <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Search here...">
+            </div> -->
+            
+            <img src="/images/RMS.png" alt="">
+        </div>
+
+        <div class="dash-content">
+            <div class="activity">
+                <div class="title">
+                    <i class="uil uil-clock-three"></i>
+                    <span class="text">Feedbacks</span>
+                </div>
+
+                <table class="usersTable" id="feedbackTable" border="1">
+                    <thead class="headerUsers">
+                        <tr>
+                            <th>Feedback ID</th>
+                            <th>Customer Name</th>
+                            <th>Comment</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyUsers">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <script src="/js/mainDashboard.js"></script>
+    <script src="/js/adminFeedbackPage.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Registration Page</title>
+    <!-- Favion Icon -->
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <!-- CSS Stylesheet -->
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <!-- ICONS -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <!--==========GOOGLE FONTS===============-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body id="modalLogin">
+    <div id="registerFormModal" class="modalLogin">
+        <div class="modal-content">
+            <!-- <span class="modal-close closeRegisterStaff" id="closeRegisterStaff">&times;</span> -->
+            <h2 class="modal-header">Staff Sign Up</h2>
+            <form action="#" method="POST" id="staffRegisterForm">
+                <div class="form-field">
+                    <label for="staffName" class="username">Staff Name</label>
+                    <input type="text" class="input-text" id="staffName" name="staffName" placeholder="Create a staff name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email" class="email">Email</label>
+                    <input type="email" class="input-text" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-field">
+                    <label for="password" class="password">Password</label>
+                    <input type="password" class="input-text" id="password" name="password" placeholder="Create a password" required>
+                </div>
+                <div class="form-field">
+                    <label for="confirmPassword" class="password">Confirm Password</label>
+                    <input type="password" class="input-text" id="confirmPassword" name="password" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-field">
+                    <!-- <a href="#" class="registerButton" id="registerButton">Register</a> -->
+                    <button type="submit" id="registerButton">Sign Up</button>
+                </div>
+                <div class="form-field confirm">
+                    <p class="forgotPassword" id="forgotPassword">Already have an account?</p>
+                    <a href="staff" id="registerButton" class="loginButton">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/staffReg.js"></script>
+    <script src="/js/script.js"></script>
+    <script>
+        const closeReg = document.getElementById('closeRegisterStaff');
+        closeReg.addEventListener('click', () => {
+            window.location.href = '/home';
+            alert('Login cancelled');
+        })
+    </script>
+</body>
+</html>

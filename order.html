@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS Order Page</title>
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body id="rms">
+    <nav class="navbarRms_container container" id="navbar">
+        <a href="#" onclick="homePage()" id="logo" class="logo">RMS</a>
+        <ul class="navbarRms_menu" id="navbarRms_menu">
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="homePage()" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Home</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="menuPage()" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Menu</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="orderPage()" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Orders</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <a href="#" onclick="staffLogin()" class="navbarRms_menu_list_link staff" id="navbarRms_menu_list_link staff">Staff</a>
+            </li>
+            <li class="navbarRms_menu_list" id="navbarRms_menu_list">
+                <div class="dropdown">
+                    <a href="#" class="navbarRms_menu_list_link" id="navbarRms_menu_list_link">Account</a>
+                    <div class="dropdown-content">
+                        <a href="#" id="loginBtn">Login</a>
+                        <a href="#" id="registerBtn">Register</a>
+                    </div>
+                </div>
+            </li>
+         </ul>
+    </nav>
+    <main class="main_container" id="main_container">
+        <section class="order_container order" id="order_container">
+            <div class="order_container_dishes" id="order_container_dishes">
+                <div class="order_container_dishes_container" id="order_container_dishes_container">
+                    <!--<nav class="order_container_dishes_nav" id="order_container_dishes_nav">
+                        <ul class="order_container_dishes_nav_list" id="order_container_dishes_nav_list">
+                            <li class="order_container_dishes_nav_list_item" id="order_container_dishes_nav_list_item">
+                                <a href="#burgers" class="order_container_dishes_nav_list_item_link" id="order_container_dishes_nav_list_item_link">Burgers</a>
+                            </li>
+                            <li class="order_container_dishes_nav_list_item" id="order_container_dishes_nav_list_item">
+                                <a href="#pizza" class="order_container_dishes_nav_list_item_link" id="order_container_dishes_nav_list_item_link">Pizza</a>
+                            </li>
+                            <li class="order_container_dishes_nav_list_item" id="order_container_dishes_nav_list_item">
+                                <a href="#fries" class="order_container_dishes_nav_list_item_link" id="order_container_dishes_nav_list_item_link">Fries</a>
+                            </li>
+                            <li class="order_container_dishes_nav_list_item" id="order_container_dishes_nav_list_item">
+                                <a href="#drink" class="order_container_dishes_nav_list_item_link" id="order_container_dishes_nav_list_item_link">Drink</a>
+                            </li>
+                        </ul>
+                    </nav>-->
+                    <div class="order_container_dishes_lists" id="order_container_dishes_lists">
+                        <!-- Menu items from database will be inserted here by JS -->
+                    </div>
+                </div>
+                <div class="order_container_dishes_section" id="order_container_dishes_section">
+                    <div class="order_container_dishes_cart_title cart" id="order_container_dishes_cart_title">
+                        <h2 class="order_container_dishes_cart_title_text" id="order_container_dishes_cart_title_text">RMS</h2>
+                        <div class="order_container_dishes_cart_pTag" id="order_container_dishes_cart_pTag" style="display: none;">
+                            <p class="order_container_dishes_cart_pTag_text" id="order_container_dishes_cart_pTag_text">Open</p>
+                            <p class="order_container_dishes_cart_pTag_text" id="order_container_dishes_cart_pTag_text">08:00AM - 11:00PM</p>
+                        </div>
+                    </div>
+                    <div class="order_container_dishes_cart cart" id="order_container_dishes_cart">
+                        <h2 class="order_container_dishes_cart_title_text" id="order_container_dishes_cart_title_text">Your Order</h2>
+                        <div class="order_container_dishes_cart_description" id="order_container_dishes_cart_description">
+                            <p class="order_container_dishes_cart_description_text cartMenuOrder" id="order_container_dishes_cart_description_text">No items in your cart</p>
+                            <div class="order_container_dishes_cart_description_cost" id="order_container_dishes_cart_description_cost">
+                                <p class="order_container_dishes_cart_description_cost_text" id="order_container_dishes_cart_description_cost_text">Total</p>
+                                <p class="order_container_dishes_cart_description_cost_total totalCartPrize" id="order_container_dishes_cart_description_cost_total">$0.00</p>
+                            </div>
+                            <a href="#" id="order_container_dishes_cart_checkout_btn" class="order_container_dishes_cart_checkout_btn" disabled>Checkout ></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Form -->
+    <div id="loginFormModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeLogin">&times;</span>
+            <h2 class="modal-header">Login</h2>
+            <form action="#" method="post" id="LoginForm">
+                <div class="form-field">
+                    <label for="customerNameLog" class="username">Customer name</label>
+                    <input type="text" class="input-text" id="customerNameLog" name="customerNameLog" placeholder="Enter your customer name" required>
+                </div>
+                <div class="form-field">
+                    <label for="passwordLog" class="password">Password</label>
+                    <input type="password" class="input-text" id="passwordLog" name="passwordLog" placeholder="Enter your password" required>
+                </div>
+                <div class="form-field">
+                     <button type="submit" id="loginButton">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Form -->
+    <div id="registerFormModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" id="closeRegister">&times;</span>
+            <h2 class="modal-header">Register</h2>
+            <form action="#" method="post" id="RegisterForm">
+                <div class="form-field">
+                    <label for="customerNameReg" class="username">Customer name</label>
+                    <input type="text" class="input-text" id="customerNameReg" name="customerNameReg" placeholder="Create a customer name" required>
+                </div>
+                <div class="form-field">
+                    <label for="emailReg" class="email">Email</label>
+                    <input type="email" class="input-text" id="emailReg" name="emailReg" placeholder="Enter your email" required>
+                </div>
+                <div class="form-field">
+                    <label for="passwordReg" class="password">Password</label>
+                    <input type="password" class="input-text" id="passwordReg" name="passwordReg" placeholder="Create a password" required>
+                </div>
+                <div class="form-field">
+                    <label for="confirmPasswordReg" class="password">Password</label>
+                    <input type="password" class="input-text" id="confirmPasswordReg" name="confirmPasswordReg" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-field">
+                    <button type="submit" id="registerButton">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer" id="footer">
+        <div class="footer_container" id="footer_container">
+            <div class="footer_containers" id="footer_containers">
+                <div class="footer_container_socials" id="footer_container_socials">
+                    <p class="footer_description" id="footer_description">RMS</p>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-twitter"></i>
+                    </a>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-envelope"></i>
+                    </a>
+                    <a href="#" id="footer_social_link" class="footer_social_link">
+                        <i class="uil uil-whatsapp"></i>
+                    </a>
+                </div>
+                <div class="footer_container_link" id="footer_container_link">
+                    <ul class="footer_links" id="footer_links">
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" onclick="homePage()" class="footer_link_link" id="footer_link_link">Home</a>
+                        </li>
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" oncanplay="menuPage()" class="footer_link_link" id="footer_link_link">Menu</a>
+                        </li>
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" onclick="orderPage()" class="footer_link_link" id="footer_link_link">Orders</a>
+                        </li>
+                        <li class="footer_link" id="footer_link">
+                            <a href="#" class="footer_link_link" id="footer_link_link">Account</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer_container_copyright" id="footer_container_copyright">
+                    <p class="footer_copyright" id="footer_copyright">&copy; 2025 RMS. All rights reserved.</p>
+                    <p class="footer_developed" id="footer_developed"><a href="#" onclick="adminLogin()" class="admin" id="admin">Developed by ROSE MULEWA</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="/js/script.js"></script>
+    <script src="/js/form.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', async () => {
+    const dishesListContainer = document.getElementById('order_container_dishes_lists');
+    const checkoutBtn = document.getElementById('order_container_dishes_cart_checkout_btn');
+    try {
+        const response = await fetch('/customerMenuTab');
+        const { data } = await response.json();
+
+        // Group menu items by category (assuming you have a 'category' field in your menus table)
+        const categories = {};
+        data.forEach(item => {
+            const category = item.category || 'Place an order';
+            if (!categories[category]) categories[category] = [];
+            categories[category].push(item);
+        });
+
+        // Generate HTML for each category and its items
+        let html = '';
+        for (const [category, items] of Object.entries(categories)) {
+            html += `
+                <div class="order_container_dishes_differences">
+                    <h2 class="order_container_dishes_differences_title">${category}</h2>
+                    <div class="order_container_dishes_differences_list">
+                        ${items.map(item => `
+                            <div class="order_container_dishes_list">
+                                <img src="/images/${item.img || 'default.jpg'}" alt="${item.itemName}" class="order_container_dishes_list_img">
+                                <h2 class="order_container_dishes_list_title cartItemName">${item.itemName}</h2>
+                                <p class="order_container_dishes_list_price cartPrize">Ksh ${item.price}</p>
+                                <button class="order_container_dishes_list_btn cartBtn">Add to cart</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        dishesListContainer.innerHTML = html;
+    } catch (err) {
+        dishesListContainer.innerHTML = '<p>Failed to load menu items.</p>';
+        console.error(err);
+    }
+
+    // Cart logic
+    let cart = [];
+    const cartMenuOrder = document.getElementById('order_container_dishes_cart_description_text');
+    const cartTotalCost = document.getElementById('order_container_dishes_cart_description_cost_total');
+
+    // Listen for clicks on Add to cart buttons (event delegation)
+    document.getElementById('order_container_dishes_lists').addEventListener('click', function(e) {
+        if (e.target.classList.contains('cartBtn')) {
+            const itemDiv = e.target.closest('.order_container_dishes_list');
+            const itemName = itemDiv.querySelector('.cartItemName').textContent;
+            const itemPrice = parseFloat(itemDiv.querySelector('.cartPrize').textContent.replace('Ksh ', ''));
+            addToCart(itemName, itemPrice);
+        }
+    });
+
+    function addToCart(name, price) {
+        const existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.qty += 1;
+        } else {
+            cart.push({ name, price, qty: 1 });
+        }
+        updateCartDisplay();
+    }
+
+    function updateCartDisplay() {
+        if (cart.length === 0) {
+            cartMenuOrder.textContent = 'No items in your cart';
+            cartTotalCost.textContent = 'Ksh 0.00';
+            checkoutBtn.setAttribute('disabled', 'disabled');
+            checkoutBtn.classList.add('disabled');
+        } else {
+            cartMenuOrder.innerHTML = cart.map(item =>
+                `<span>${item.name} x ${item.qty} - Ksh ${(item.price * item.qty).toFixed(2)}</span><br>`
+            ).join('');
+            const total = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+            cartTotalCost.textContent = `Ksh ${total.toFixed(2)}`;
+            checkoutBtn.removeAttribute('disabled');
+            checkoutBtn.classList.remove('disabled');
+        }
+    }
+
+    // Prompt register on checkout
+    checkoutBtn.addEventListener('click', function(e) {
+        if (checkoutBtn.hasAttribute('disabled')) {
+            e.preventDefault();
+            return;
+        }
+        e.preventDefault();
+        document.getElementById('registerFormModal').style.display = 'block';
+    });
+
+    // Initial state
+    checkoutBtn.setAttribute('disabled', 'disabled');
+    checkoutBtn.classList.add('disabled');
+});
+    </script>
+</body>
+</html>
