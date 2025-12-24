@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - RMS</title>
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="dashboard-layout">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <img src="/images/RMS.png" alt="RMS Logo" class="sidebar-logo">
+                <span class="sidebar-title">ADMIN</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="sidebar-nav-group">
+                    <div class="sidebar-nav-label">Main</div>
+                    <a href="/admin/dashboard" class="sidebar-nav-item active">
+                        <i class='bx bx-home'></i>
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="/admin/users" class="sidebar-nav-item">
+                        <i class='bx bx-group'></i>
+                        <span>Users</span>
+                    </a>
+                    <a href="/admin/menus" class="sidebar-nav-item">
+                        <i class='bx bx-food-menu'></i>
+                        <span>Menu</span>
+                    </a>
+                    <a href="/admin/orders" class="sidebar-nav-item">
+                        <i class='bx bx-shopping-bag'></i>
+                        <span>Orders</span>
+                    </a>
+                    <a href="/admin/feedbacks" class="sidebar-nav-item">
+                        <i class='bx bx-comment-detail'></i>
+                        <span>Feedbacks</span>
+                    </a>
+                </div>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="theme-toggle" id="themeToggle">
+                    <i class='bx bx-moon'></i>
+                    <span>Dark Mode</span>
+                </div>
+                <a href="/logout" class="sidebar-nav-item">
+                    <i class='bx bx-log-out'></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+            <header class="dashboard-header">
+                <div class="dashboard-header-left">
+                    <div class="sidebar-toggle" id="sidebarToggle">
+                        <i class='bx bx-menu'></i>
+                    </div>
+                    <div class="dashboard-search">
+                        <i class='bx bx-search'></i>
+                        <input type="text" placeholder="Search...">
+                    </div>
+                </div>
+                <div class="dashboard-header-right">
+                    <div class="header-actions">
+                        <img src="https://ui-avatars.com/api/?name=Admin&background=3b82f6&color=fff" alt="Admin" class="user-avatar">
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-card-header">
+                            <span class="stat-card-title">Total Users</span>
+                            <div class="stat-card-icon">
+                                <i class='bx bx-user'></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-value" id="totalUsers">0</div>
+                        <div class="stat-card-change">
+                            <i class='bx bx-trending-up'></i>
+                            View all users
+                        </div>
+                    </div>
+
+                    <div class="stat-card success">
+                        <div class="stat-card-header">
+                            <span class="stat-card-title">Total Menu Items</span>
+                            <div class="stat-card-icon">
+                                <i class='bx bx-food-menu'></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-value" id="totalMenus">0</div>
+                        <div class="stat-card-change">
+                            <i class='bx bx-trending-up'></i>
+                            Manage menu
+                        </div>
+                    </div>
+
+                    <div class="stat-card warning">
+                        <div class="stat-card-header">
+                            <span class="stat-card-title">Total Orders</span>
+                            <div class="stat-card-icon">
+                                <i class='bx bx-shopping-bag'></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-value" id="totalOrders">0</div>
+                        <div class="stat-card-change">
+                            <i class='bx bx-trending-up'></i>
+                            View orders
+                        </div>
+                    </div>
+
+                    <div class="stat-card error">
+                        <div class="stat-card-header">
+                            <span class="stat-card-title">Feedbacks</span>
+                            <div class="stat-card-icon">
+                                <i class='bx bx-comment'></i>
+                            </div>
+                        </div>
+                        <div class="stat-card-value" id="totalFeedbacks">0</div>
+                        <div class="stat-card-change">
+                            <i class='bx bx-trending-up'></i>
+                            View feedbacks
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">
+                            <i class='bx bx-trending-up'></i>
+                            Recent Activity
+                        </h2>
+                    </div>
+                    <div class="empty-state">
+                        <i class='bx bx-line-chart empty-state-icon'></i>
+                        <h3 class="empty-state-title">No Recent Activity</h3>
+                        <p class="empty-state-description">Activity will appear here as users interact with the system</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/js/admin/dashboard.js"></script>
+</body>
+</html>

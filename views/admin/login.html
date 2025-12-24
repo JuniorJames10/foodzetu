@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - RMS</title>
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--secondary-50) 100%);
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 450px;
+            padding: var(--space-4);
+        }
+
+        .login-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-xl);
+            padding: var(--space-8);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .login-logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-4);
+            background: var(--primary-600);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: var(--text-4xl);
+        }
+
+        .login-title {
+            font-size: var(--text-3xl);
+            font-weight: var(--font-bold);
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .login-subtitle {
+            color: var(--text-secondary);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            margin-bottom: var(--space-6);
+            transition: color var(--transition-fast);
+        }
+
+        .back-link:hover {
+            color: var(--primary-600);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <a href="/" class="back-link">
+            <i class='bx bx-arrow-back'></i>
+            Back to Home
+        </a>
+
+        <div class="login-card">
+            <div class="login-header">
+                <div class="login-logo">
+                    <i class='bx bx-shield-alt'></i>
+                </div>
+                <h1 class="login-title">Admin Login</h1>
+                <p class="login-subtitle">Enter your credentials to access the admin panel</p>
+            </div>
+
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="admin@rms.com" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class='bx bx-log-in'></i>
+                    Sign In
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('adminLoginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const data = {
+                email: formData.get('email'),
+                password: formData.get('password')
+            };
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    if (result.user.role === 'admin') {
+                        window.location.href = '/admin/dashboard';
+                    } else {
+                        alert('Admin access required');
+                    }
+                } else {
+                    alert(result.message || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('An error occurred during login');
+            }
+        });
+    </script>
+</body>
+</html>

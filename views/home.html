@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RMS - Restaurant Management System</title>
+    <link rel="shortcut icon" href="/images/RMS.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/landing.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="/" class="navbar-logo">
+                <i class='bx bx-restaurant'></i>
+                RMS
+            </a>
+
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="/" class="navbar-link active">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/menu" class="navbar-link">Menu</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/order" class="navbar-link">Order</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="/staff/login" class="navbar-link">Staff</a>
+                </li>
+                <li class="navbar-item dropdown">
+                    <a href="#" class="navbar-link dropdown-trigger">
+                        Account <i class='bx bx-chevron-down'></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item" onclick="showLoginModal(); return false;">Login</a>
+                        <a href="#" class="dropdown-item" onclick="showRegisterModal(); return false;">Register</a>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="navbar-toggle" id="navbarToggle">
+                <i class='bx bx-menu'></i>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Our Restaurant</h1>
+                <p class="hero-description">
+                    Experience culinary excellence with our expertly crafted dishes. Order online, track your orders, and enjoy seamless dining.
+                </p>
+                <div class="hero-actions">
+                    <a href="/menu" class="btn btn-primary btn-lg">
+                        <i class='bx bx-food-menu'></i>
+                        Explore Menu
+                    </a>
+                    <a href="/order" class="btn btn-outline btn-lg">
+                        <i class='bx bx-cart'></i>
+                        Order Now
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restaurant" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-dish'></i>
+                    </div>
+                    <h3 class="feature-title">Delicious Meals</h3>
+                    <p class="feature-description">Fresh ingredients, expertly prepared by our talented chefs</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-time-five'></i>
+                    </div>
+                    <h3 class="feature-title">Quick Service</h3>
+                    <p class="feature-description">Fast and efficient service for dine-in and takeaway orders</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class='bx bx-mobile'></i>
+                    </div>
+                    <h3 class="feature-title">Easy Ordering</h3>
+                    <p class="feature-description">Order online and track your food in real-time</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Customer Login</h2>
+                <button class="btn btn-icon btn-ghost" onclick="closeLoginModal()">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" id="loginEmail" name="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <input type="password" id="loginPassword" name="password" class="form-input" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="registerModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Customer Registration</h2>
+                <button class="btn btn-icon btn-ghost" onclick="closeRegisterModal()">
+                    <i class='bx bx-x'></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerName" class="form-label">Full Name</label>
+                        <input type="text" id="registerName" name="name" class="form-input" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <input type="email" id="registerEmail" name="email" class="form-input" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <input type="password" id="registerPassword" name="password" class="form-input" placeholder="Create a password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="registerConfirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" id="registerConfirmPassword" name="confirmPassword" class="form-input" placeholder="Confirm your password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>RMS</h3>
+                    <p>Your destination for delicious meals and exceptional service.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" class="social-link"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" class="social-link"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" class="social-link"><i class='bx bxl-whatsapp'></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/menu">Menu</a></li>
+                        <li><a href="/order">Order</a></li>
+                        <li><a href="#" onclick="showLoginModal(); return false;">Account</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li>123 Restaurant St, Food City</li>
+                        <li>contact@rms.com</li>
+                        <li>+123 456 7890</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 RMS. All rights reserved. | Developed by <a href="/admin/login" style="color: var(--primary-600);">ROSE MULEWA</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/home.js"></script>
+</body>
+</html>
